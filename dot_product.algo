@@ -1,0 +1,54 @@
+PROCEDURE dot_product (Arr1,Arr2:ARRAY_OF INTEGER )
+VAR
+    ps:=INTEGER
+    i:= INTEGER         
+BEGIN
+    ps :=0 ;
+    FOR i from 0 to ARR1.length-1 STEP1 DO
+    ps := Arr1[i]*Arr2[i];
+    END_FOR
+    SWITCH (ps) DO
+        case 0 : Write (" The 2 vectors are orthogonal")
+        default : Write (" The 2 vectors are not orthogonal")
+    END_SWITCH
+END
+ALGORITHM dot_product 
+VAR
+    v1 : ARRAY_OF INTEGER[]
+    v2 : ARRAY_OF INTEGER[]
+BEGIN
+    IF (v1.length = v2.length) Do 
+     dot_product(v1,v2);
+    ELSE
+    Write("The 2 vectors are not orthogonal")
+    End 
+END
+
+
+
+
+////// In case of function ////
+FUNCTION dot_product(Arr1,Arr2:ARRAY_OF INTEGER ) : INTEGER
+VAR
+    ps:=INTEGER
+    i:= INTEGER   
+BEGIN
+    FOR i FROM 0 TO Arr1.length STEP 1  DO
+        ps := Arr1[i]*Arr2[i];
+    END_FOR
+    RETURN PS ;
+END
+ALGORITHM dot_product
+VAR
+n : INTEGER
+v1 : ARRAY_OF INTEGER[n];
+v2 : ARRAY_OF INTEGER[n];
+BEGIN
+n:= dot_product(v1,v2)
+IF (n = 1) THEN
+     Write (" The 2 vectors are orthogonal");
+    ELSE
+    Write (" The 2 vectors are not orthogonal");
+END_IF  
+
+END_FOR
